@@ -37,6 +37,8 @@ const article = {
   published_at_int: 1577077200000,
 };
 
+const articleWithPastPublishDate = { ...article, published_at_int: 1581693220 };
+
 const articleWithOrganization = {
   ...article,
   organization: {
@@ -135,6 +137,13 @@ storiesOf('Components/Articles/Standard', module)
     <Article
       isBookmarked={boolean('isBookmarked', false)}
       article={object('article', article)}
+      currentTag={text('currentTag', 'javascript')}
+    />
+  ))
+  .add('With Past Published Date', () => (
+    <Article
+      isBookmarked={boolean('isBookmarked', false)}
+      article={object('article', articleWithPastPublishDate)}
       currentTag={text('currentTag', 'javascript')}
     />
   ))
